@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galileo's Guild</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Science Adventure Club</h1>
+        <p>The best way to learn is to explore!</p>
+        <img src="2.png" alt="People discussing around a table">
+        <button>Join Us</button>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Our Club</h2>
+        <p>Galileo’s Guild is a space for students to engage with science and literature. We host events, workshops, and activities to inspire learning and creativity.</p>
+        <img src="1.webp" alt="About Us Image">
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+        <h2>Events</h2>
+        <div class="event">
+            <h3>Star Gazing Night</h3>
+            <p>Location: Planetarium | Date: Oct 20</p>
+            <button>Register</button>
+        </div>
+        <div class="event">
+            <h3>Science Fair</h3>
+            <p>Location: School Hall | Date: Nov 15</p>
+            <button>Register</button>
+        </div>
+    </section>
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F4FA;
+            color: #333;
+        }
+
+        /* Gallery Slider Styles */
+        .gallery-slider {
+            position: relative;
+            max-width: 600px; /* Adjust as needed */
+            margin: auto;
+            overflow: hidden; /* Hide overflow */
+        }
+
+        .gallery-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-images img {
+            min-width: 100%;
+            border-radius: 5px;
+        }
+
+        button.prev, button.next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 102, 204, 0.7);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button.prev {
+            left: 10px;
+        }
+
+        button.next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Other sections here... -->
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-slider">
+            <div class="gallery-images">
+                <img src="7.jpg" alt="Image 1">
+                <img src="8.jpg" alt="Image 2">
+                <img src="5.jpg" alt="Image 3">
+                <img src="6.jpg" alt="Image 4">
+                <img src="3.jpg" alt="Image 5">
+                <img src="4.jpg" alt="Image 6">
+                <img src="9.jpg" alt="Image 7">
+                <img src="0.jpg" alt="Image 8">
+                <img src="1.webp" alt="Image 9">
+                <img src="2.png" alt="Image 10">
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Galileo's Guild | All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlides() {
+            const slides = document.querySelectorAll('.gallery-images img');
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+            
+            const offset = -currentSlide * 100; // 100% width for each slide
+            document.querySelector('.gallery-images').style.transform = `translateX(${offset}%)`;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlides();
+        }
+
+        // Initialize the first slide
+        showSlides();
+    </script>
+
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Blog</h2>
+        <div class="blog-post">
+            <img src="9.jpg" alt="Blog Post 1">
+            <h3>The History of Science and Literature</h3>
+            <p>A brief overview of how science has influenced literature through history.</p>
+        </div>
+        <div class="blog-post">
+            <img src="0.jpg" alt="Blog Post 2">
+            <h3>Telescope Adventures</h3>
+            <p>Exploring the stars with modern telescopes in our latest astronomy session.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>For more information, reach out to us:</p>
+        <ul>
+            <li>Email: galileosguild@example.com</li>
+            <li>Phone: (123) 456-7890</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Galileo's Guild | All rights reserved.</p>
+    </footer>
+</body>
+</html>
